@@ -5,9 +5,9 @@ import Link from "next/link"
 import { ArrowLeft, User, Phone, Calendar, ClipboardList, FileText, Activity } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-export default async function ProntuarioPage(props: any) {
-  const params = await props.params
-  const id = params.id
+export default async function ProntuarioPage(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params; // Isso resolve o erro da imagem sadasd.jpg
+  const id = params.id;
   const supabase = await createClient()
 
   const { data: paciente, error } = await supabase
