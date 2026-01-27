@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import { cn } from "@/lib/utils";
+import "./globals.css"; // Garante que o Tailwind funcione 
 
-const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ClinicOps",
-  description: "Sistema de Gestão de Clínicas",
+  title: "ClinicOps - Gestão Operacional",
+  description: "Plataforma SaaS Multi-tenant para Clínicas",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="pt-br">
-      {/* O className tem que estar DENTRO da abertura da tag body, antes do sinal > */}
-      <body className={cn("min-h-screen font-sans antialiased", fontSans.variable)}>
-        {children}
+    <html lang="pt-BR">
+      <body className={inter.className}>
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );
