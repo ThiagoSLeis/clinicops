@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🏥 ClinicOps — Plataforma SaaS Multi-tenant para Clínicas
 
-## Getting Started
 
-First, run the development server:
 
-```bash
+
+
+
+Case Técnico desenvolvido para o Processo Seletivo Dizevolv
+Plataforma SaaS de Gestão Operacional e Compliance para Clínicas, com foco em segurança, multi-tenancy e governança de dados.
+
+📌 Visão Geral
+
+O ClinicOps é um MVP de plataforma SaaS multi-tenant voltada para clínicas médicas, odontológicas e de saúde integrada.
+
+O sistema foi desenvolvido seguindo rigorosamente o PRD oficial do desafio, simulando um cenário real de produto, com foco em:
+
+Arquitetura SaaS escalável
+
+Isolamento total de dados entre clínicas
+
+Controle de acesso por perfil
+
+Segurança e compliance (LGPD)
+
+🎯 Objetivos do Projeto
+
+Implementar multi-tenancy segura utilizando Row Level Security (RLS)
+
+Garantir isolamento de dados por clínica (tenant)
+
+Desenvolver dashboards distintos por perfil de usuário
+
+Aplicar boas práticas de segurança em aplicações SaaS
+
+Entregar uma aplicação funcional, publicada e acessível
+
+🧱 Arquitetura SaaS Multi-tenant
+
+O ClinicOps adota o modelo Database-per-schema lógico, utilizando:
+
+PostgreSQL (Supabase)
+
+Row Level Security (RLS) em todas as tabelas
+
+Filtro automático por clinica_id
+
+🔐 Isolamento de Dados
+
+Cada requisição é automaticamente filtrada no banco de dados, impedindo que um usuário:
+
+Acesse dados de outra clínica
+
+Modifique registros fora do seu tenant
+
+Esse controle é feito no banco, não apenas no frontend ou backend.
+
+🛡️ Segurança e Compliance
+
+O projeto foi construído seguindo princípios de segurança exigidos para aplicações SaaS:
+
+✅ Row Level Security (RLS) ativo em todas as tabelas
+
+✅ RBAC (Role-Based Access Control)
+
+Admin Master (Plataforma)
+
+Admin Tenant (Clínica)
+
+Usuários Operacionais
+
+✅ Auditoria de ações sensíveis
+
+✅ Proteção de dados sensíveis (LGPD)
+
+✅ Boas práticas de autenticação e autorização
+
+
+➡ RLS aplicado em 100% das tabelas
+
+🚀 Como executar localmente
+1️⃣ Clone o repositório
+git clone https://github.com/ThiagoSLeis/clinicops.git
+cd clinicops
+
+2️⃣ Instale as dependências
+npm install
+
+3️⃣ Configure as variáveis de ambiente
+
+Crie um arquivo .env.local:
+
+NEXT_PUBLIC_SUPABASE_URL= 
+NEXT_PUBLIC_SUPABASE_ANON_KEY= 
+
+4️⃣ Rode o projeto
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🌐 Links
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🔗 Aplicação em Produção: https://clinicops.vercel.app
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+💻 Repositório: https://github.com/ThiagoSLeis/clinicops
 
-## Learn More
+🧠 Considerações Técnicas
 
-To learn more about Next.js, take a look at the following resources:
+Este projeto foi desenvolvido com foco em:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Fidelidade total ao PRD fornecido
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Clareza de arquitetura
 
-## Deploy on Vercel
+Segurança aplicada no nível de banco de dados
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Organização e legibilidade do código
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Simulação real de um produto SaaS em produção
+
+👨‍💻 Autor
+
+Thiago Santos Leis
+Desenvolvedor Full Stack
+Entusiasta de arquitetura SaaS, segurança e aplicações escaláveis.
